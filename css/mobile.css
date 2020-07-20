@@ -1,0 +1,145 @@
+a, a:active, a:hover{
+    text-decoration: none;
+}
+
+.background {
+    position: relative;
+    width: auto;
+    left: 0px;
+    top: 0px;
+}
+.transparent-background {
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+.background-1 {
+    background-image: url("../img/bg_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 360px;
+height: 676px;
+}
+.background-1 .transparent-background {
+    background-color: rgba(255, 255, 255, 0.3);
+    height: 676px;
+}
+.menu {
+    position: absolute;
+    width: auto;
+    width: 360px;
+    height: 676px;
+}
+#logo {
+    position: absolute;
+    width: 182px;
+    height: 70px;
+    left: 89px;
+    top: 72px;
+    background-size: cover;
+    background-image: url("../img/logo.png");
+}
+.menu a {
+    position: absolute;
+    width: 92px;
+    height: 31px;
+    left: 239px;
+    top: 12px;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 18px;
+    
+    color: #2E2E2E;
+}
+.menu a:last-child {
+    left: 305px;
+    top: 12px;
+}
+.main-text {
+    width: 243px;
+    height: 190px;
+    left: 62px;
+    top: 171px;
+    position: absolute;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 37px;
+    line-height: 43px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: black;
+}
+.secondary-text {
+    position: absolute;
+    width: 311px;
+    height: 124px;
+    left: 29px;
+    top: 396px;
+    
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    
+    color: #353535;
+}
+.button1 {
+    position: absolute;
+    width: 173px;
+    height: 66px;
+    left: 97px;
+    top: 550px;
+    background: #1B7BF6;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    font-family: "Roboto-Bold", sans-serif;
+    color: white;
+    font-size: 22px;
+    line-height: 26px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.hr {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+.hr > .line {
+    flex: 1;
+    display: block;
+    height: 2px;
+    background-color: #1B7BF6;
+    border-radius: 10px;
+    width: 104px;
+    height: 2px;
+}
+.hr > .text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    left: 100px;
+    top: 0px;
+    
+}
+.background-1 + .hr {
+    height: 10px;
+}
+.background-1 + .hr > .text {
+    width: 150px;
+    height: 21px;
+}
