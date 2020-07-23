@@ -2,7 +2,7 @@ a, a:active, a:hover{
     text-decoration: none;
 }
 
-.order-button > div {
+.order-button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,17 +18,14 @@ a, a:active, a:hover{
     box-shadow: 5px 5px 20px rgba(0,0,0,.25);
 }
 
-.background {
+.background-1, .background-1 > .transparent-background {
     width: 100%;
-    height: 1003px;
+    height: 100vh;
     left: 0px;
     top: 0px;
 }
 .transparent-background {
     position: relative;
-    top: 0px;
-    left: 0px;
-    height: 1003px;
 }
 .background-1 {
     background-image: url("../img/bg_1.jpg");
@@ -37,6 +34,11 @@ a, a:active, a:hover{
 }
 .background-1 .transparent-background {
     background-color: rgba(255, 255, 255, 0.3);
+}
+.background-2, .background-2 > .transparent-background {
+    width: 100%;
+    height: 100vh;
+    min-height: 1000px;
 }
 .background-2 {
     background-image: url("../img/bg_2.jpg");
@@ -52,77 +54,65 @@ a, a:active, a:hover{
     background-size: cover;
 }
 .background-3 .transparent-background {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 .background-4 {
     background-image: url("../img/bg_4.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
+.background-4 .transparent-background {
+    background-color: rgba(255, 255, 255, 0);
+}
 .background-5 {
     position: relative;
     left: 0px;
     top: 0px;
 }
-.background-1 .order-button {
-    position: absolute;
-    top: 705px;
-    right: 50px;
-}
 @media (max-width: 600px){
-    .background {
-        height: 676px;
-    }
-    .transparent-background {
-        height: 676px;
-    }
-    .background-1 {
-        height: 676px;
-    }
-    .background-2 {
-        height: 676px;
-    }
-    .background-3 {
-        height: 700px;
-        background-size: contain;
-    }
-    .background-4 {
-        background-size: contain;
-        background-repeat: repeat-y;
-        height: 2100px;
+    .background-1, .background-1 > .transparent-background {
+        height: 750px;
     }
 }
 /* ///////////////////////////////////// */
-.menu {
+.background-1 {
     position: relative;
-    width: auto;
-    height: 50px;
+}
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 70px;
 }
 #logo {
-    position: relative;
-    float: left;
-    top: 2%;
-    left: 5%;
     width: 286px;
     height: 118px;
-    background-size: cover;
-    background-image: url("../img/logo.png");
 }
-.menu a {
-    position: relative;
-    float: right;
-    padding-top: 3%;
-    right: 5%;
-    margin-left: 5%;
+.menu__links {
+    display: flex;
+}
+.menu__links a {
     font-family: "Roboto", sans-serif;
     font-size: 24px;
     line-height: 28px;
     color: #000000;
+    padding: 0 10px;
+}
+.background-1__content {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    transform: translateY(-50%);
+    height: 600px;
+}
+.background-1__content > * {
+    margin: 20px 70px 20px 0;
 }
 .main-text {
-    position: relative;
-    padding-top: 25%;
-    padding-right: 5%;
     font-family: "Roboto", sans-serif;
     font-size: 61px;
     font-weight: bold;
@@ -137,81 +127,47 @@ a, a:active, a:hover{
     letter-spacing: 1px;
     color: #656565;
     text-align: right;
-    padding-right: 5%;
-    padding-top: 1%;
 }
-@media (max-width: 600px){
+@media (max-width: 750px){
     .menu {
-        position: absolute;
-        width: auto;
-        height: 142px;
+        flex-direction: column-reverse;
     }
+
     #logo {
-        display: flex;
-        left: 65%;
-        top: 50%;
-        width: 182px;
+        width: 180px;
         height: 70px;
-        background-size: cover;
-        background-image: url("../img/logo.png");
     }
-    .menu a {
-        left: 340px;
-        top: 12px;
-        position: absolute;
-        float: right;
-        font-family: "Roboto", sans-serif;
-        font-size: 15px;
-        line-height: 18px;
-        color: #2E2E2E;
+
+    .menu > * {
+        padding: 20px 0;
     }
-    .menu a:last-child {
-        left: 270px;
-        top: 12px;
+
+    .menu__links {
+        align-self: flex-end;
     }
-    .main-text {
-        position: absolute;
-        top: 8%;
-        left: 20%;
-        width: 243px;
-        height: 190px;
-        font-family: "Roboto-Bold", sans-serif;
-        font-size: 37px;
-        line-height: 43px;
-        text-align: center;
-        letter-spacing: 0.03em;
-        color: rgba(0, 0, 0, 0.88) !important;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    .menu__links {
+        padding: 10px 0;
     }
-    .secondary-text {
-        position: absolute;
-        width: 315px;
-        height: 124px;
-        top: 50%;
-        left: 14%;
-        font-family: "Roboto", sans-serif;
-        font-size: 25px;
-        line-height: 29px;
-        text-align: center;
-        letter-spacing: 0.03em;
-        color: #353535;
-    }
-    .button1 {
-        position: absolute;
-        background: #1B7BF6;
-        top: 80%;
-        left: 30%;
-        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
-        border-radius: 20px;
-        color: white;
-        width: 173px;
-        height: 66px;
-        font-family: "Roboto-Bold", sans-serif;
-        font-size: 22px;
-        line-height: 26px;
+
+    .background-1__content {
+        height: 430px;
+        top: 60%;
         align-items: center;
+    }
+
+    .background-1__content > * {
         text-align: center;
-        letter-spacing: 0.03em;
+        padding: 20px 0;
+        margin: 0;
+    }
+
+    .main-text {
+        font-size: 37px;
+    }
+
+    .secondary-text {
+        font-size: 25px;
     }
 }
 /* ///////////////////////////////////// */
@@ -221,6 +177,8 @@ a, a:active, a:hover{
     left: 0;
     display: flex;
     margin: 35px 25px;
+    min-width: 280px;
+    overflow: hidden;
     align-items: center;
     justify-content: space-between; 
 }
@@ -238,6 +196,11 @@ a, a:active, a:hover{
     font-family: "Roboto", sans-serif;
     font-weight: bold;
     font-size: 27px;
+}
+@media (max-width: 750px) {
+    .hr > .text {
+        font-size: 18px;
+    }
 }
 .background-1 + .hr {
     height: 30px;
@@ -279,46 +242,58 @@ a, a:active, a:hover{
     }
 }
 /* ///////////////////////////////////// */
+.background-2 .transparent-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+.background-2 .transparent-background .order-button {
+    margin-bottom: 40px;
+}
 .background-2 .card {
-    top: 10%;
-    left: 4%;
-    position: relative;
     background-color: white;
     box-shadow: 3px 3px 25px rgba(0,0,0,25);
     border-radius: 15px;
     padding: 20px;
     font-family: "Roboto", sans-serif;
-    max-width: 750px;
+    margin: 0 30px;
+    max-width: 700px;
+}
+@media (max-width: 750px) {
+    .background-2 .card {
+        padding: 10px;
+    }
+
+    .background-2 > .transparent-background {
+        justify-content: start;
+    }
+
+    .background-2 > .transparent-background > * {
+        margin: 10px 0;
+    }
 }
 .background-2 .card .header {
-    position: relative;
-    top: 0;
-    left: 0;
     color: #1B7BF6;
     font-size: 30px;
 }
-.background-2 .card .header:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+.background-2 .card .hr {
     height: 2px;
+    margin: 0;
     background-color: #1B7BF6;
 }
 .background-2 .card .body {
-    margin-left: 20px;
     margin-top: 20px;
-    position: relative;
     font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 28px;
+    font-size: 1.5em;
+    line-height: 1.3em;
     color: #000000;    
 }
 .background-2 .card .body ul {
     list-style-type: disc;
+    margin: 0;
 }
 .background-2 .card .body .highlighted {
     color: #1B7BF6;
@@ -332,13 +307,11 @@ a, a:active, a:hover{
     display: flex;
     flex-direction: column;
     align-self: center;
-    margin-left: 20%;
 }
 .background-2 .card-3 {
     display: flex;
     flex-direction: column;
     align-self: flex-end;
-    margin-left: 40%;
 }
 .background-2 .button1 {
     position: relative;
@@ -356,7 +329,6 @@ a, a:active, a:hover{
 }
 .background-2 + .hr > .text {
     width: 228.42px;
-    height: 51.72px;
     text-align: center;
     font-size: 27px;
     line-height: 32px;
@@ -364,147 +336,61 @@ a, a:active, a:hover{
 .background-2 + .hr > .text > span {
     width: 200px;
 }
-@media (max-width: 1300px) {
-    .background-2 .card {
-        max-width: 740px;
-    }
-    .background-2 .card-2 {
-        margin-left: 15%;
-    }
-    .background-2 .card-3 {
-        margin-left: 30%;
-    }
+.background-2 .order-button {
+    display: flex;
+    align-self: center;
 }
-@media (max-width: 1100px) {
-    .background-2 .card {
-        max-width: 730px;
-    }
-    .background-2 .card-2 {
-        margin-left: 10%;
-    }
-    .background-2 .card-3 {
-        margin-left: 20%;
-    }
-}
-@media (max-width: 900px) {
-    .background-2 .card {
-        max-width: 720px;
-    }
-    .background-2 .card-2 {
-        margin-left: 5%;
-    }
-    .background-2 .card-3 {
-        margin-left: 10%;
-    }
-}
-@media (max-width: 800px) {
-    .background-2 .card {
-        top: 5%;
-        max-width: 590px;
-        margin-bottom: 2%;
-    }
-    .background-2 .card-2 {
-        margin-left: 2%;
-        margin-bottom: 3%;
-    }
-    .background-2 .card-3 {
-        margin-left: 6%;
-    }
-    .background-2 .button1  {
-        top: 10%;
-        right: 35%;
-    }
-}
-@media (max-width: 600px) {
+@media (max-width: 750px) {
     .background-2 + .hr > .text {
-        width: 200px;
         font-size: 18px;
         line-height: 21px;
     }
     .background-2 .card {
-        top: 2%;
-        left: 4%;    
-        position: relative;
         background-color: white;
         box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.25);
         border-radius: 15px;
-        width: 345px;
-    }
-    .background-2 .card .header {
-        position: relative;
-        top: 0;
-        left: 0;
-        color: #1B7BF6;
-        font-size: 22px;
-        line-height: 26px;
-    }
-    .background-2 .card .header:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background-color: #1B7BF6;
+        align-self: center;
     }
     .background-2 .card .body {
-        position: relative;
-        font-family: "Roboto", sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 15px;
-        line-height: 18px;
-        color: #000000;    
+        font-size: 17px;
+        line-height: 20px;
     }
-    .background-2 .card .card-1 {
-        display: flex;
-        flex-direction: column;
-    }
-    .background-2 .card-2 {
-        display: flex;
-        flex-direction: column;
-        margin-top: 5%;
-        margin-left: 0%;
-    }
-    .background-2 .card-3 {
-        display: flex;
-        flex-direction: column;
-        margin-top: 5%;
-        margin-left: 0%;
-    }
-    .background-2 .button1 {
-        display: none;
+    .card-1, .card-2, .card-3 {
+        width: 80%;
+        align-self: center;
     }
 }
 /* ///////////////////////////////////// */
-.background-3 .order-button {
-    position: relative;
-    top: 10%;
-    left: 5%;
+.background-3 > .transparent-background {
+    display: flex;
+    flex-direction: column;
+}
+.background-3 > .transparent-background > .order-button {
+    align-self: center;
+}
+.background-3 .order-sample {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+.background-3 .order-sample .order-button, .background-3 .order-sample .order-button div {
     z-index: 2;
     width: 410px;
     height: 100px;
     background: #1B7BF6;
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
-}
-.background-3 .order-button p {
-    display: flex;
-    font-family: "Roboto-Bold" , sans-serif;
-    font-size: 36px;
-    line-height: 42px;
-    color: white;
-    width: 410px;
-    height: 100px;
     text-align: center;
-    align-items: center;
 }
-.background-3 .order-secondary-button {
-    position: relative;
-    float: right;
-    /* top: 20%; */
-    right: 5%;
-    z-index: 2;
+.background-3 .order-sample .order-button {
+    align-self: flex-start;
+    font-family: "Roboto", sans-serif;
+}
+.background-3 .order-sample .order-secondary-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-end;
     width: 500px;
     height: 100px;
     background: #FFFFFF;
@@ -512,8 +398,9 @@ a, a:active, a:hover{
     box-sizing: border-box;
     box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.25);
     border-radius: 30px;
+    z-index: 2;
 }
-.background-3 .order-secondary-button p {
+.background-3 .order-sample .order-secondary-button p {
     font-family: "Roboto", sans-serif;
     font-size: 28px;
     line-height: 33px;
@@ -522,34 +409,49 @@ a, a:active, a:hover{
     align-items: center;
     text-align: center;
     color: #333333;
-    
 }
 em {
     font-style: italic;
     color: #1B7BF6;
 }
 .background-3 .table {
-    position: relative;
-    top: 50px;
-    margin: 0 170px;
-    width: auto;
-    height: 700px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
     border-radius: 10px;
     box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.25);
     border: 3px solid #1B7BF6;
     background-color: white;
     z-index: 1;
+    overflow-x: scroll;
+    overflow-y: hidden;
 }
 .background-3 table {
+    position: relative;
+    align-self: center;
     font-family: "Roboto", sans-serif;
     line-height: 138.2%;
-    letter-spacing: 0.08em;
-    font-size: 18px;
+    letter-spacing: 0.1em;
+    font-size: 1.3em;
+    min-width: 1050px;
     margin-top: 60px;
-    margin-left: 45px;
-    /* margin-right: 10px; */
+    margin-left: 30px;
     text-align: center;
     color: black;
+}
+.background-3 table thead {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.background-3 table thead:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #1B7BF6;
 }
 .background-3 table th:first-child, th:last-child{
     color: #1B7BF6;
@@ -560,7 +462,6 @@ em {
 .background-3 table th{
     height: 40px;
     width: 140px;
-    border-bottom: 3px solid #1B7BF6;
 }
 .background-3 table th:first-child {
     width: 100px;
@@ -575,109 +476,42 @@ em {
 .background-3 table .domen {
     color: #656565;
 }
-.background-3 .button1 {
-    position: relative;
-    background: #1B7BF6;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    color: white;
-    width: 216px;
-    height: 61px;
-    font-family: "Roboto-Bold", sans-serif;
-    font-size: 30px;
-    line-height: 35px;
-    top: 10%;
-    right: 10%;
-}
 .background-3 + .hr > .text {
     width: 250px;
-    height: 50px;
     text-align: center;
 }
 .background-3 + .hr > .text > span {
     width: 150px;
 }
-@media (max-width: 1100px) {
-    .background-3 .table {
-        margin: 0px 50px;
-    }
-    .background-3 .button1 {
-        left: 8%;
-        top: 12%;
-    }
-}
-@media (max-width: 780px) {
-    .background-3 .table {
-        margin: 0px 20px;
-    }
-    .background-3 .button1 {
-        left: 30%;
-        top: 12%;
-    }
-}
 @media (max-width: 750px) {
-    .background-3 .table {
-        margin: 0px 10px;
-    }
-    .background-3 .button1 {
-        left: 30%;
-        top: 12%;
-    }
-}
-@media (max-width: 700px) {
-    .background-3 .table {
-        margin: 0px 5px;
-    }
-    .background-3 .button1 {
-        left: -35%;
-        top: 5%;
-    }
-}
-@media (max-width: 600px) {
     .background-3 + .hr > .text {
-        width: 200px;
-        height: 90px;
         font-size: 18px;
         line-height: 21px;
         text-align: center;
     }
-    .background-3 + .hr > .text > span {
-        width: 150px;
+    .background-3 .order-sample .order-button {
+        transform: translate(-25%, -25%);
     }
-    .background-3 .order-button {
-        position: absolute;
-        top: 5%;
+    .background-3 .order-sample .order-secondary-button {
+        transform: translate(25%, -25%);
+    }
+    .background-3 .order-sample .order-button, .background-3 .order-sample .order-button div {
         width: 132px;
         height: 37px;
-    }
-    .background-3 .order-button p {
-        position: absolute;
-        width: 132px;
-        height: 10px;
-        font-family: "Roboto-Bold" , Condensed;
-        font-style: normal;
         font-size: 15px;
-        line-height: 18px;
-        align-items: center;
-        text-align: center;
-        
-        color: #FFFFFF;
     }
-    .background-3 .order-secondary-button {
+    .background-3 .order-sample .order-secondary-button, .background-3 .order-sample .order-button, .background-3 .order-sample .order-button div {
         position: absolute;
-        top: 5%;
-        width: 149px;
-        height: 43px;
-        background: #FFFFFF;
-        border: 2px solid #1B7BF6;
+        width: 160px;
+        height: 50px;
         box-sizing: border-box;
         box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.25);
         border-radius: 30px;
     }
-    .background-3 .order-secondary-button p {
+    .background-3 .order-sample .order-secondary-button p {
         margin: 3px 0px;
-        width: 149px;
-        height: 15px;
+        width: 160px;
+        height: auto;
         font-family: "Roboto", sans-serif;
         font-size: 15px;
         line-height: 18px;
@@ -690,60 +524,71 @@ em {
         font-style: italic;
         color: #1B7BF6;
     }
-    .background-3 .table {
-        position: relative;
-        height: 580px;
-        margin-left: 2%;
-        margin-right: 2%;
-        top: 7%;
+}
+@media (max-width: 1200px) {
+    .background-3 .order-sample .table {
         overflow-x: scroll;
+        align-self: normal;
         border-radius: 10px;
         box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.25);
         border: 3px solid #1B7BF6;
         background-color: white;
-        /* z-index: 1; */
+        padding: 0;
     }
-    .background-3 table {
+    .background-3 .order-sample table {
+        align-self: flex-start;
         font-family: "Roboto", sans-serif;
         letter-spacing: 0.08em;
         font-size: 15px;
         line-height: 138.2%;
-        margin-top: 8%;
-        margin-left: 3%;
         text-align: center;
         color: black;
     }
-    .background-3 table th{
-        height: 40px;
-        width: 200px;
-        border-bottom: 3px solid #1B7BF6;
-    }
-    .background-3 .button1 {
-        position: relative;
-        background: #1B7BF6;
-        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
-        border-radius: 20px;
-        color: white;
-        width: 216px;
-        height: 61px;
-        font-family: "Roboto-Bold", sans-serif;
-        font-size: 22px;
-        line-height: 26px;
-        float: left;
-        top: 10%;
-        right: 0%;
-        left: 25%;
-    }
 }
 /* ///////////////////////////////////// */
+.background-4, .background-4 > .transparent-background {
+    height: 100vh;
+}
+.background-4 .containers-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    overflow: auto;
+}
+.background-4 .containers-wrapper > * {
+    float: left;
+}
+@media (max-width: 750px) {
+    .background-4 .containers-wrapper > * {
+        margin: 50px calc((100vw - 270px) / 2 - 5px);
+    }
+}
+@media (min-width: 750px) {
+    .background-4 .containers-wrapper > * {
+        margin: 50px calc((100vw - 560px) / 4 - 5px);
+    }
+}
+@media (max-width: 1600px) {
+    .background-4, .background-4 > .transparent-background {
+        height: auto;
+    }
+    .background-4 .containers-wrapper {
+        position: initial;
+        top: 0;
+        transform: none;
+    }
+}
+@media (min-width: 1600px) {
+    .background-4 .containers-wrapper > * {
+        margin: 0 calc((100vw - 1120px) / 8 - 5px);
+    }
+}
 .background-4 .container {
     font-family: "Roboto", sans-serif;
-    display: grid;
-    justify-content: space-between;
-    grid-gap: 10px;
-    padding-top: 15%;
-    padding-left: 4%;
-    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .background-4 .container > div {
     background: #1B7BF6;
@@ -755,14 +600,14 @@ em {
     /* display: flex; */
     flex-direction: column;
     color: #FFFFFF;
-    width: 298px;
+    width: 270px;
     height: 477px;
 }
 .background-4 .container .card .header {
-    width: 298px;
+    width: 270px;
     height: 80px;
-    font-family: "Roboto-Bold", sans-serif;
-    font-style: normal;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
     font-size: 22px;
     line-height: 26px;
     align-items: center;
@@ -771,7 +616,7 @@ em {
     color: #FFFFFF;
 }
 .background-4 .container .card .body {
-    width: 298px;
+    width: 270px;
     height: 401px;
     background: #FFFFFF;
     border: 2px solid #1B7BF6;
@@ -779,11 +624,16 @@ em {
     border-radius: 0px 0px 15px 15px;
     align-items: center;
     text-align: center;
+    font-family: "Roboto", sans-serif;
     letter-spacing: 0.05em;
     font-size: 24px;
     color: black;
 }
+.background-4 .container .card .body p:first-child {
+    font-weight: bold;
+}
 .background-4 .container .card .body .button{
+    font-family: "Roboto", sans-serif;
     background: #E5E5E5;
     border: 3px solid #1B7BF6;
     box-sizing: border-box;
@@ -792,7 +642,8 @@ em {
     width: 171px;
     height: 82px;
     color: #1B7BF6;
-    left: 60px;
+    left: 50%;
+    transform: translateX(-50%);
     align-items: center;
     text-align: center;
 }
@@ -816,164 +667,84 @@ em {
     flex-direction: column;
     align-self: flex-end;
 }
-.background-4 .button1 {
-    position: relative;
-    background: #1B7BF6;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
-    color: white;
-    width: 216px;
-    height: 61px;
-    font-family: "Roboto-Bold", sans-serif;
-    font-size: 30px;
-    line-height: 35px;
-    top: 50%;
-    left: 15%;
+.background-4 .container .order-button {
+    margin-top: 30px;
 }
 .background-4 + .hr > .text {
-    width: 380px;
-    height: 10px;
     text-align: center;
 }
 .background-4 + .hr > .text > span {
     width: 280px;
 }
-@media (max-width: 1420px) {
-    .background-4 .container .card {
-        width: 298px;
-        height: 477px;
-        margin-left: 10%;
-    }
-    .background-4 {
-        height: 1510px;
-    }
-    .background-4 .button1 {
-        left: 20%;
-    }
-}
-@media (max-width: 600px) {
-    .background-4 .container .card {
-        width: 260px;
-        height: 380px;
-        margin-left: 5%;
-    }
-    .background-4 .container .card .header {
-        width: 260px;
-        height: 60px;
-        font-size: 22px;
-        line-height: 26px;
-        background: #333333;
-        box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.25);
-        border-radius: 15px 15px 0 0 ;
-    }
-    .background-4 .container .card .body {
-        width: 260px;
-        height: 320px;
-        font-size: 23px;
-        line-height: 120.2%;
-    }
-    .background-4 .container .card .body .button{
-        width: 128px;
-        height: 41px;
-        font-size: 20px;
-        line-height: 0px;
-        margin-top: -10px;
-        margin-left: 1%;
-    }
-    .background-4 .container .card-1 {
-        height: 320px;
-    }
-    .background-4 .container .card-1 .body {
-        height: 260px;
-    }
-    .background-4 .container .card-1 .body .button {
-        margin-top: -65px;
-    }
-    .background-4 .button1 {
-        width: 173px;
-        height: 66px;
-        font-size: 22px;
-        line-height: 26px;
-        left: 20%;
-    }
-    .background-4 + .hr > .text {
-        width: 239px;
-        height: 50px;
-        text-align: center;
-        font-size: 18px;
-        line-height: 21px;
-    }
-    .background-4 + .hr > .text > span {
-        width: 280px;
-    }
-}
-@media (max-width: 567px) {
-    .background-4 {
-        height: 2300px;
-    }
-}
-@media (max-width: 500px){
-    .background-4 .container .card {
-        margin-left: 35%;
-    }
-    .background-4 .button1 {
-        left: 50%;
-    }
-}
 /* ///////////////////////////////////// */
+.background-5 {
+    padding: 40px 0;
+}
+.steps {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
 .steps .steps_container{
-    max-width: 1400px;
-    display: grid;
-    grid-template-areas: "side body";
+    font-family: "Roboto", sans-serif;
     color: black;
 }
-.steps .sidebar{
-    display: inline-block;
-    grid-area: "side";
-    width: 70px;
-    height: 70px;
-    left: 43px;
-    top: 81px;
+.steps .steps_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.steps .vertical-line{
-    position: relative;
-    border-left: 7px solid #1B7BF6;
-    height: 255px;
-    min-height: 20vh;
-    width: 7px;
-    left: 65px;
-    top:80px;
-}
-.steps p{
-    left:43px;
-    top: 81px;
-    width: 8px;
-    border-radius: 100px;
-    padding: 15px 20px;
-    position: relative;
-    right: 20px;
+.sidebar__point {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     background-color: #1B7BF6;
-    font-weight: bold;
+    font-family: "Roboto", sans-serif;
     color: white;
 }
+.steps .vertical-line{
+    height: 100px;
+    width: 7px;
+    background-color: #1B7BF6;
+    border-radius: 10px;
+    margin: 10px 0;
+}
 .steps .steps-body{
-    display: inline-block;
     display: flex; 
     flex-direction: column;
     justify-content: space-between;
 }
 .contentBox {
+    width: 80%;
     display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin: 10px 0;
+    border-radius: 30px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
 }
-.steps .image img{
-    background-size: cover;
+.contentBox > * {
+    margin: 0 30px;
 }
-.steps .description{
+@media (max-width: 750px) {
+    .contentBox {
+        flex-direction: column;
+    }
+    .contentBox > * {
+        margin: 30px 0;
+    }
+}
+.steps .description {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: 0 20px;
 }
-.steps .description__title{
+.steps .description__title {
     text-transform: uppercase;
     font-family: "Roboto" , sans-serif;
     font-weight: bold;
@@ -989,25 +760,19 @@ em {
     letter-spacing: 0.1em;
     color: #000000;
 }
+.background-5 .order-button {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
 @media (max-width: 750px) {
-    .description__title, .description__text {
+    .steps .description__text {
         font-size: 18px;
+        line-height: 20px;
     }
-    .image-1 {
-        width: 103px;
-        height: 139px;
-    }
-    .image-2 {
-        width: 150px;
-        height: 150px;
-    }
-    .image-3 {
-        width: 116px;
-        height: 129px;
-    }
-    .image-4 {
-        width: 159px;
-        height: 163px;
+    .steps .description__title {
+        font-size: 22px;
+        line-height: 24px;
     }
 }
 /* ///////////////////////////////////// */
@@ -1017,7 +782,7 @@ em {
     background: #998C85;
     background-size: cover;
     padding: 15px;
-    width: 100%;
+    width: calc(100% - 30px);
 }
 .footer .footer-container-1 {
     flex: 1;
@@ -1056,8 +821,8 @@ em {
 }
 .footer .footer-container-2 .links-row a {
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1103,80 +868,5 @@ em {
     .footer .footer-container-2 h2 {
         font-size: 15px;
         line-height: 18px;
-    }
-}
-@media (max-width: 380px) {
-    #logo {
-        display: flex;
-        left: 60%;
-        top: 50%;
-    }
-    .menu a {
-        left: 300px;
-        top: 12px;
-    }
-    .menu a:last-child {
-        left: 220px;
-        top: 12px;
-    }
-    .main-text {
-        position: absolute;
-        top: 8%;
-        left: 20%;
-    }
-    .secondary-text {
-        position: absolute;
-        top: 50%;
-        left: 10%;
-    }
-    .background-2 .card {
-        top: 2%;
-        left: 4%;    
-        position: relative;
-        background-color: white;
-        box-shadow: 3px 3px 25px rgba(0, 0, 0, 0.25);
-        border-radius: 15px;
-        width: 290px;
-    }
-    .background-3 .button1 {
-        left: 20%;
-    }
-    .background-4 .container .card {
-        margin-left: 15%;
-        margin-top: 0%;
-    }
-    .background-4 .button1 {
-        left: 30%;
-        margin-bottom: 2%;
-    }
-    .steps .description {
-        left: 50px;
-    }
-    .steps button {
-        left: 100px;
-    }
-    .steps .steps_body {
-        left: 50px;
-    }
-    .steps .image {
-        margin: 0px 0px 100px 0px;
-        padding: 0px 0px 50% 0px;
-        left: 3%;
-    }
-    .steps .image1 img{
-        width: auto;
-        height: 120px;
-    }
-    .steps .image2 img{
-        width: auto;
-        height: 90px;
-    }
-    .steps .image3 img{
-        width: auto;
-        height: 120px;
-    }
-    .steps .image4 img{
-        width: auto;
-        height: 120px;
     }
 }
