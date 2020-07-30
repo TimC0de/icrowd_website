@@ -204,9 +204,9 @@ form {
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    top: 125%;
+    top: 110%;
     left: 0%;
-    margin-left: -60px;
+    margin: 0 -20px;
     opacity: 0;
     transition: opacity 0.3s;
 }
